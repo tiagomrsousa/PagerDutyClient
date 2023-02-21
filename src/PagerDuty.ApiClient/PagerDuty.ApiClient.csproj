@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+PagerDuty API
+
+This document describes the PagerDuty REST APIs.  For guides and examples please visit our [Documentation.](https://developer.pagerduty.com/docs/get-started/getting-started/)  Our REST APIs are defined in OpenAPI v3.x. You can view the schema at [github.com/PagerDuty/api-schema](https://github.com/PagerDuty/api-schema).  Note that properties in some schemas have fields not shown by default such as `readOnly`, `format`, and `default`. Hover your cursor over the right column that looks like `optional+1` to see the full list of fields. 
+
+OpenAPI spec version: 2.0.0
+Contact: support@pagerduty.com
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49BB560A-BEEF-4046-BF82-810974575EA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PagerDuty.ApiClient</RootNamespace>
+    <AssemblyName>PagerDuty.ApiClient</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="JsonSubTypes">
+      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll</HintPath>
+      <HintPath Condition="Exists('..\packages')">..\packages\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll</HintPath>
+      <HintPath Condition="Exists('..\..\packages')">..\..\packages\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll</HintPath>
+      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="obj\**" />
+    <Compile Include="Client\Extensions.cs" />
+    <Compile Include="Model\ComponentsparametersautomationActionsActionTypeschema.cs" />
+    <Compile Include="Model\ComponentsparametersautomationActionsInvocationStateschema.cs" />
+    <Compile Include="Model\CustomFieldsFieldValuepropertiesdatatype.cs" />
+    <Compile Include="Model\CustomFieldsFieldValuepropertiesdescription.cs" />
+    <Compile Include="Model\CustomFieldsFieldValuepropertiesdisplayName.cs" />
+    <Compile Include="Model\CustomFieldsFieldValuepropertiesfixedOptions.cs" />
+    <Compile Include="Model\CustomFieldsFieldValuepropertiesmultiValue.cs" />
+    <Compile Include="Model\UserListResponse.cs" />
+    <Compile Include="Model\UserListItem.cs" />
+    <Compile Include="Model\PriorityResponse.cs" />
+    <Compile Include="Model\PriorityItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
